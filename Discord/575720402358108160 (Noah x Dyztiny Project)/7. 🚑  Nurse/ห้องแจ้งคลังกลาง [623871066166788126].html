@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!-- saved from url=(0360)file:///E:/GitHubRepo/Noah/noah_discord_achieve/achieve/575720402358108160%20(Noah%20Project)/7.%20%F0%9F%9A%91%20%20Nurse/NOAH%20x%20Dyztiny%20Project%20-%20%F0%9F%9A%91%20%20Nurse%20-%20%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%87%20[623871066166788126].html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>NOAH x Dyztiny Project - ห้องแจ้งคลังกลาง</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="./ห้องแจ้งคลังกลาง [623871066166788126]_files/solarized-dark.min.css">
+    <script src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/30f7ce291ac7b3886dae095b20a4fe46.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">NOAH x Dyztiny Project</div>
+        <div class="preamble__entry">🚑  Nurse / ห้องแจ้งคลังกลาง</div>
+
+        <div class="preamble__entry preamble__entry--small"></div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">19-Nov-19 12:58 AM</span>
+
+            <div class="chatlog__message chatlog__message--pinned" data-message-id="646046576233545779" id="message-646046576233545779">
+                <div class="chatlog__content">
+                    <div class="markdown"><img class="emoji " alt="noonneSad" title="noonneSad" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/603914599976140812.png"> เอาไปฝากแจ้งด้วย  เอามาคืนก็บอกเน้อ จะแก้<img class="emoji " alt="noonneSad" title="noonneSad" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/603914599976140812.png"> 
+
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> ยา/อุปกรณ์อื่นๆ
+Painkiller x 0
+Paracetamol x 0
+Antibiotic x 0
+Rehydration Water x 0
+Oxygen Mask x 15
+
+<img class="emoji " alt="📢" title="📢" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f4e2.png"> อุปกรณ์ของหมอ
+Megaphone x 5
+Radio x 0
+Cutting Board x 1
+Mortar x 2
+Tablet Press x 2
+
+<img class="emoji " alt="🚑" title="🚑" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f691.png"> <img class="emoji " alt="🚑" title="🚑" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f691.png"> <img class="emoji " alt="🚑" title="🚑" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f691.png"> <img class="emoji " alt="🚑" title="🚑" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f691.png"> <img class="emoji " alt="🚑" title="🚑" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f691.png"><span class="chatlog__edited-timestamp" title="13-Feb-20 05:48 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">07-Dec-19 12:09 AM</span>
+
+            <div class="chatlog__message " data-message-id="652557115134705706" id="message-652557115134705706">
+                <div class="chatlog__content">
+                    <div class="markdown"><img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> ไม่รับเหมาค่ารักษาวอร์แก๊งทุกแก๊ง
+
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> อย่าขายยาให้คนไข้ทีละเยอะๆ ปล.อย่าลดราคาเยอะ เพราะยาที่เคาร์เตอร์ยาเราจะเป็นหมัน ถ้าประชาชนสต็อกยาได้ราคาต่ำกว่าราคากลาง (มากกว่า5กระปุก/1คน)
+
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> ราคากลาง Painkiller 100 , Antibiotic 100 , Paracetamol 80, Rehydration Water 80
+
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> คนไข้ บาดเจ็บ ราคาถูกกว่าราคากลาง
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> คนไข้ ไม่มีอาการบาดเจ็บ มาขอซื้อที่ รพ. คิดราคากลาง
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> คนไข้ขอซื้อด้านนอก มีอาการบาดเจ็บ คิดราคากลาง/ชาร์จเพิ่มนิดหน่อย
+<img class="emoji " alt="🐰" title="🐰" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f430.png"> คนไข้ขอซื้อด้านนอก ไม่มีอาการบาดเจ็บ ชาร์จเพิ่ม 5 - 20ดอล</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/5610fa5385a55b8cc40c18bd7fdbd247.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="WONDERMILD#3797" data-user-id="220213341140811776" style="color: rgb(52, 152, 219)">Gunggink Greyson (มาย)</span>
+
+
+        <span class="chatlog__timestamp">08-Feb-20 09:22 AM</span>
+
+            <div class="chatlog__message " data-message-id="675526909379215360" id="message-675526909379215360">
+                <div class="chatlog__content">
+                    <div class="markdown">8-2-2020 เบิก Megaphone x 1</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/2705.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/4d5d14e6ca1332e032c6267aa86e16bc.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kirimoji#3111" data-user-id="272347000517951489" style="color: rgb(52, 152, 219)">Mark Zuckumborh (ฟร้องส์)</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 03:51 PM</span>
+
+            <div class="chatlog__message " data-message-id="683234947326410763" id="message-683234947326410763">
+                <div class="chatlog__content">
+                    <div class="markdown">เบิกถัง 1 29/2</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/2705.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/9dfa569ee1bb170a074bb072cf041c32.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="I&#39;mfallin&#39;#6073" data-user-id="594728164886970368" style="color: rgb(52, 152, 219)">Ujin S. Flynn</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 07:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="683286596673732618" id="message-683286596673732618">
+                <div class="chatlog__content">
+                    <div class="markdown">29/02/2020 Oxygen mask 3</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/2705.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/a09930f20e5f23e23daee0a1a9f5ce2b.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="PPK_#5694" data-user-id="212556163194159117" style="color: rgb(52, 152, 219)">PPK_</span>
+
+
+        <span class="chatlog__timestamp">01-Mar-20 09:36 PM</span>
+
+            <div class="chatlog__message " data-message-id="683684196258283599" id="message-683684196258283599">
+                <div class="chatlog__content">
+                    <div class="markdown">3/1 เบิกถัง x2</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/2705.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/737733fe970097ef13974920a4ed844e.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="P 4 N D A#0894" data-user-id="388025038030372864" style="color: rgb(255, 151, 196)">MIRINDA (ด้า)</span>
+
+
+        <span class="chatlog__timestamp">03-Mar-20 12:39 AM</span>
+
+            <div class="chatlog__message " data-message-id="684092544262602754" id="message-684092544262602754">
+                <div class="chatlog__content">
+                    <div class="markdown">3/3 เบิกถัง x2</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/2705.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🔹" title="🔹" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/1f539.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/5610fa5385a55b8cc40c18bd7fdbd247.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="WONDERMILD#3797" data-user-id="220213341140811776" style="color: rgb(52, 152, 219)">Gunggink Greyson (มาย)</span>
+
+
+        <span class="chatlog__timestamp">12-Mar-20 11:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="687697428509622315" id="message-687697428509622315">
+                <div class="chatlog__content">
+                    <div class="markdown">12/3/20 เบิกmegaphone1</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="./ห้องแจ้งคลังกลาง [623871066166788126]_files/2705.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 8 message(s)</div>
+</div>
+
+
+</body></html>

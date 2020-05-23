@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>NOAH x Dyztiny Project - ติดอยู่ในคุก-ช่วยด้วยยยย</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/solarized-dark.min.css">
+    <script src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/30f7ce291ac7b3886dae095b20a4fe46.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">NOAH x Dyztiny Project</div>
+        <div class="preamble__entry">ศูนย์แจ้งความและร้องเรียน Police / ติดอยู่ในคุก-ช่วยด้วยยยย</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/9999dff88f8a712acdf0a96492df60df.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Puss Peepers#5278" data-user-id="278740223012241418" style="color: rgb(255, 0, 0)">!Puss V Peepers</span>
+
+
+        <span class="chatlog__timestamp">17-Nov-19 11:09 AM</span>
+
+            <div class="chatlog__message " data-message-id="645475669828042774" id="message-645475669828042774">
+                <div class="chatlog__content">
+                    <div class="markdown">ห้องนี้สำหรับแจ้งบัคใดๆก็ตามที่ทำให้ตัวละครติดอยู่ในคุกโดยโทษนั้นหมดเวลาแล้วหรือไม่ได้รับโทษตามปกติ แจ้งให้ จนท.ตำรวจมาช่วยออกไปได้ครับ
+หากลักไก่มีโทษตามปกติครับ <span class="mention">@everyone</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/13448fecc6f38e1b86c14ac981b0b75f.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="EthAnlele#7389" data-user-id="314861842381930496" style="color: rgb(255, 151, 196)">Michael Shelby</span>
+
+
+        <span class="chatlog__timestamp">15-Jan-20 12:44 AM</span>
+
+            <div class="chatlog__message " data-message-id="666699114234511398" id="message-666699114234511398">
+                <div class="chatlog__content">
+                    <div class="markdown">คุณตำรวจลืมปลดล็อคกุญแจมือค้าบ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/600d649e794881d39d6486969ae1ddd7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="BenzisHappy#1891" data-user-id="239997426402852877" style="color: rgb(31, 139, 76)">B ishappy</span>
+
+
+        <span class="chatlog__timestamp">24-Jan-20 03:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="670183275259494420" id="message-670183275259494420">
+                <div class="chatlog__content">
+                    <div class="markdown">ผมโดนล็อคมืออยู่ตลากลางครับ แต่ไม่เห็นคนล็อคมือ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="670183553358757890" id="message-670183553358757890">
+                <div class="chatlog__content">
+                    <div class="markdown">ผมอยู่บนรถ 6 ล้อตรงตลากลางครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/f0ee57d3abda43cee58aaa97e68b21e9.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Armoo Jetdragon#9196" data-user-id="214329601290141696" style="color: rgb(104, 97, 255)">(PO) 'ZaneRaMel Macchiato</span>
+
+
+        <span class="chatlog__timestamp">24-Jan-20 03:34 PM</span>
+
+            <div class="chatlog__message " data-message-id="670184612642684928" id="message-670184612642684928">
+                <div class="chatlog__content">
+                    <div class="markdown">CLEAR!!!</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="peachhabiJubjub" title="peachhabiJubjub" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/556466619430207490.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/d8b94688bf3de2a912bd4a3178f4f1b7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="A Rez#0829" data-user-id="436141674880696322" style="color: rgb(231, 76, 60)">Reznik</span>
+
+
+        <span class="chatlog__timestamp">25-Jan-20 02:39 PM</span>
+
+            <div class="chatlog__message " data-message-id="670533224992210944" id="message-670533224992210944">
+                <div class="chatlog__content">
+                    <div class="markdown">บัคติดอยู่ในคุ๊ก ช่วยด้วยยยย</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/2ee040f6e4b4ecd64cc3ce7fa3b706f9.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Carameow#1570" data-user-id="649712434554077212" style="color: rgb(104, 97, 255)">(27MARY99) Caramel Macchiato</span>
+
+
+        <span class="chatlog__timestamp">25-Jan-20 02:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="670535646519099392" id="message-670535646519099392">
+                <div class="chatlog__content">
+                    <div class="markdown">CLEAR</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/d8b94688bf3de2a912bd4a3178f4f1b7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="A Rez#0829" data-user-id="436141674880696322" style="color: rgb(231, 76, 60)">Reznik</span>
+
+
+        <span class="chatlog__timestamp">26-Jan-20 06:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="670954323311853571" id="message-670954323311853571">
+                <div class="chatlog__content">
+                    <div class="markdown">ติดอยู่ในคุกครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/4db2281bbb49eb08ea121ab2181d6e93.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="PrototypeK#8801" data-user-id="247249010111414273" style="color: rgb(104, 97, 255)">[Deputy Sheriff]Smith a.wishley</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-20 03:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="671277176758468608" id="message-671277176758468608">
+                <div class="chatlog__content">
+                    <div class="markdown">Help! โรลเเบคกลับมาครับ ไม่มีเวลานับ<span class="chatlog__edited-timestamp" title="27-Jan-20 03:55 PM">(edited)</span></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200127155515_1.jpg">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200127155515_1.jpg" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1b504c89622c9393d8c0cd2998c0f534.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="NesNattawut#7426" data-user-id="263328699527462913" style="color: rgb(255, 151, 196)">( Sgt I ) Nest Banderas  (เนส)</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-20 04:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="671280322310176768" id="message-671280322310176768">
+                <div class="chatlog__content">
+                    <div class="markdown">มีใครไปหรือยังครับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="671280352844578817" id="message-671280352844578817">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="PrototypeK#8801">@[Deputy Sheriff]Smith a.wishley</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/4db2281bbb49eb08ea121ab2181d6e93.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="PrototypeK#8801" data-user-id="247249010111414273" style="color: rgb(104, 97, 255)">[Deputy Sheriff]Smith a.wishley</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-20 04:09 PM</span>
+
+            <div class="chatlog__message " data-message-id="671280623264202762" id="message-671280623264202762">
+                <div class="chatlog__content">
+                    <div class="markdown">ยังครับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="671280644013424650" id="message-671280644013424650">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="NesNattawut#7426">@( Sgt I ) Nest Banderas  (เนส)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1b504c89622c9393d8c0cd2998c0f534.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="NesNattawut#7426" data-user-id="263328699527462913" style="color: rgb(255, 151, 196)">( Sgt I ) Nest Banderas  (เนส)</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-20 04:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="671281041599889408" id="message-671281041599889408">
+                <div class="chatlog__content">
+                    <div class="markdown">ครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/4db2281bbb49eb08ea121ab2181d6e93.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="PrototypeK#8801" data-user-id="247249010111414273" style="color: rgb(104, 97, 255)">[Deputy Sheriff]Smith a.wishley</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-20 04:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="671281407288672256" id="message-671281407288672256">
+                <div class="chatlog__content">
+                    <div class="markdown">เกมเเครชกำลังกลับเข้าไปครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1b504c89622c9393d8c0cd2998c0f534.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="NesNattawut#7426" data-user-id="263328699527462913" style="color: rgb(255, 151, 196)">( Sgt I ) Nest Banderas  (เนส)</span>
+
+
+        <span class="chatlog__timestamp">27-Jan-20 04:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="671281454470266880" id="message-671281454470266880">
+                <div class="chatlog__content">
+                    <div class="markdown">โอเครครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/d3b5ce365ffe92e669724569f7fac706.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Achi#2862" data-user-id="325265199772729344" style="color: rgb(173, 20, 87)">Achi</span>
+
+
+        <span class="chatlog__timestamp">02-Feb-20 01:33 PM</span>
+
+            <div class="chatlog__message " data-message-id="673415783501791252" id="message-673415783501791252">
+                <div class="chatlog__content">
+                    <div class="markdown">ติดอยู่ในคุกครับ เวลาหมดแล้ว <span class="mention" style="color: rgb(104, 97, 255); background-color: rgba(104, 97, 255, 0.1);">@Police</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/c545866b6d5a00d1a1edf46e7fe5c6ef.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="CHIPMEE#6023" data-user-id="261518328781078530" style="color: rgb(255, 151, 196)">(PO lll) MEEMEE ORLOV</span>
+
+
+        <span class="chatlog__timestamp">02-Feb-20 01:36 PM</span>
+
+            <div class="chatlog__message " data-message-id="673416555706712075" id="message-673416555706712075">
+                <div class="chatlog__content">
+                    <div class="markdown">เคลียครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/69b762abfa239d830e55a12155065bee.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="toomtam &#39;#0629" data-user-id="417287105794932736" style="color: rgb(104, 97, 255)">(SGT SHERIFF) Martin Luther</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 04:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="675278551720656926" id="message-675278551720656926">
+                <div class="chatlog__content">
+                    <div class="markdown">พอเข้าคุกแล้ววาปมาตรงท่าเรือข้างล่างครับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="675278688358498304" id="message-675278688358498304">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(104, 97, 255); background-color: rgba(104, 97, 255, 0.1);">@Police</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/f23586162896f581c3d6715c028336f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Best&amp;Boss#0382" data-user-id="289424319564742658">Best&amp;Boss</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 04:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="675278785653768192" id="message-675278785653768192">
+                <div class="chatlog__content">
+                    <div class="markdown">อยู่ที่พับกล่อง ถูกต้องไหมครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/69b762abfa239d830e55a12155065bee.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="toomtam &#39;#0629" data-user-id="417287105794932736" style="color: rgb(104, 97, 255)">(SGT SHERIFF) Martin Luther</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 04:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="675278966562488322" id="message-675278966562488322">
+                <div class="chatlog__content">
+                    <div class="markdown">อยู่ตรง Buccaneer Way ครับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="675279369496690688" id="message-675279369496690688">
+                <div class="chatlog__content">
+                    <div class="markdown">เดี๋ยวส่ง GPS ให้ในเกมนะครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/199369d9e728f95e41e36594a8004f74.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="ÄBÇ#9338" data-user-id="285751511244603392" style="color: rgb(31, 139, 76)">Abc Elsa</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 04:59 PM</span>
+
+            <div class="chatlog__message " data-message-id="675279393035386890" id="message-675279393035386890">
+                <div class="chatlog__content">
+                    <div class="markdown">ครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/69b762abfa239d830e55a12155065bee.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="toomtam &#39;#0629" data-user-id="417287105794932736" style="color: rgb(104, 97, 255)">(SGT SHERIFF) Martin Luther</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 05:00 PM</span>
+
+            <div class="chatlog__message " data-message-id="675279626502930432" id="message-675279626502930432">
+                <div class="chatlog__content">
+                    <div class="markdown">เอ่อโทรศัพท์ไม่มีเดี๋ยวผมรอเวลาก็ได้ครับแต่แจ้งในนี้ไว้ก่อน</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/199369d9e728f95e41e36594a8004f74.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="ÄBÇ#9338" data-user-id="285751511244603392" style="color: rgb(31, 139, 76)">Abc Elsa</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 05:00 PM</span>
+
+            <div class="chatlog__message " data-message-id="675279668709949453" id="message-675279668709949453">
+                <div class="chatlog__content">
+                    <div class="markdown">แคปจอคอมมาก็ได้นะครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/69b762abfa239d830e55a12155065bee.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="toomtam &#39;#0629" data-user-id="417287105794932736" style="color: rgb(104, 97, 255)">(SGT SHERIFF) Martin Luther</span>
+
+
+        <span class="chatlog__timestamp">07-Feb-20 05:01 PM</span>
+
+            <div class="chatlog__message " data-message-id="675279866328776734" id="message-675279866328776734">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200207170032_1.jpg">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200207170032_1.jpg" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Vacsel#2661" data-user-id="253277985837285378">Vacsel</span>
+
+
+        <span class="chatlog__timestamp">12-Feb-20 07:42 PM</span>
+
+            <div class="chatlog__message " data-message-id="677132408620843039" id="message-677132408620843039">
+                <div class="chatlog__content">
+                    <div class="markdown">Helpppp</div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/unknown.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/unknown.png" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/2aa06496c6feffc4ba348cce4dc8326e.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MOOPinGJR#7416" data-user-id="617824127948161080" style="color: rgb(31, 139, 76)">Jod Howdy</span>
+
+
+        <span class="chatlog__timestamp">19-Feb-20 02:09 AM</span>
+
+            <div class="chatlog__message " data-message-id="679404264904458240" id="message-679404264904458240">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200219020935_1.jpg">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200219020935_1.jpg" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="679404454168231937" id="message-679404454168231937">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200219021033_1.jpg">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200219021033_1.jpg" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/4db2281bbb49eb08ea121ab2181d6e93.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="PrototypeK#8801" data-user-id="247249010111414273" style="color: rgb(104, 97, 255)">[Deputy Sheriff]Smith a.wishley</span>
+
+
+        <span class="chatlog__timestamp">23-Feb-20 01:35 AM</span>
+
+            <div class="chatlog__message " data-message-id="680845154273460356" id="message-680845154273460356">
+                <div class="chatlog__content">
+                    <div class="markdown">Help ติดอยู่ในคุกครับ เวลาไม่นับครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/6f4e94112f96ae3ab25ee3fa8d07b878.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Joke Johnsons#0979" data-user-id="602089517763264522">Joke Johnsons</span>
+
+
+        <span class="chatlog__timestamp">26-Feb-20 10:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="682254680847548447" id="message-682254680847548447">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/unknown(1).png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/unknown(1).png" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="682254784530743345" id="message-682254784530743345">
+                <div class="chatlog__content">
+                    <div class="markdown">ติดไป 15 นาที ยังไม่ ออกเลบ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/ebee1744efa49feeec00879c209332b6.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Demongunss#7501" data-user-id="360027587478683648" style="color: rgb(104, 97, 255)">(PO Ill ) Shaw Orlov</span>
+
+
+        <span class="chatlog__timestamp">26-Feb-20 11:40 PM</span>
+
+            <div class="chatlog__message " data-message-id="682265774278311955" id="message-682265774278311955">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Joke Johnsons#0979">@Joke Johnsons</span> ออกยังครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/9b3baaa33474cf5bda955d2cdad522f8.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="ONIoGOD#9014" data-user-id="481245532573007873" style="color: rgb(31, 139, 76)">Black Jones</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 10:50 AM</span>
+
+            <div class="chatlog__message " data-message-id="682434445256556669" id="message-682434445256556669">
+                <div class="chatlog__content">
+                    <div class="markdown">ติดอยู่ในคุกครับ</div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200227104730_1.jpg">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/20200227104730_1.jpg" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1b504c89622c9393d8c0cd2998c0f534.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="NesNattawut#7426" data-user-id="263328699527462913" style="color: rgb(255, 151, 196)">( Sgt I ) Nest Banderas  (เนส)</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 11:02 AM</span>
+
+            <div class="chatlog__message " data-message-id="682437264902455347" id="message-682437264902455347">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="ONIoGOD#9014">@Black Jones</span> มีใครช่วยรึยังครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/9b3baaa33474cf5bda955d2cdad522f8.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="ONIoGOD#9014" data-user-id="481245532573007873" style="color: rgb(31, 139, 76)">Black Jones</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 11:02 AM</span>
+
+            <div class="chatlog__message " data-message-id="682437312264929283" id="message-682437312264929283">
+                <div class="chatlog__content">
+                    <div class="markdown">ยังไม่มีครับ <span class="mention" title="NesNattawut#7426">@( Sgt I ) Nest Banderas  (เนส)</span><span class="chatlog__edited-timestamp" title="27-Feb-20 11:06 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/92207cb7c7beeef8802076d1f7e26918.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="IcecooI#9525" data-user-id="557175961108348949" style="color: rgb(31, 139, 76)">White Jones</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 12:36 PM</span>
+
+            <div class="chatlog__message " data-message-id="682461141460451339" id="message-682461141460451339">
+                <div class="chatlog__content">
+                    <div class="markdown">ติดอยู่ในคุก <span class="mention" title="NesNattawut#7426">@( Sgt I ) Nest Banderas  (เนส)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1b504c89622c9393d8c0cd2998c0f534.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="NesNattawut#7426" data-user-id="263328699527462913" style="color: rgb(255, 151, 196)">( Sgt I ) Nest Banderas  (เนส)</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 12:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="682461574111166474" id="message-682461574111166474">
+                <div class="chatlog__content">
+                    <div class="markdown">มีใครไปช่วยหรือยังครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/92207cb7c7beeef8802076d1f7e26918.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="IcecooI#9525" data-user-id="557175961108348949" style="color: rgb(31, 139, 76)">White Jones</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 12:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="682461603823616021" id="message-682461603823616021">
+                <div class="chatlog__content">
+                    <div class="markdown">ยังเลย</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/13448fecc6f38e1b86c14ac981b0b75f.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="EthAnlele#7389" data-user-id="314861842381930496" style="color: rgb(255, 151, 196)">Michael Shelby</span>
+
+
+        <span class="chatlog__timestamp">28-Feb-20 01:15 AM</span>
+
+            <div class="chatlog__message " data-message-id="682652028480389185" id="message-682652028480389185">
+                <div class="chatlog__content">
+                    <div class="markdown">คุณตำรวจครับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="682652048465985569" id="message-682652048465985569">
+                <div class="chatlog__content">
+                    <div class="markdown">ยืน afk นานเกิน</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="682652062412177450" id="message-682652062412177450">
+                <div class="chatlog__content">
+                    <div class="markdown">เด้งหลุดเกม</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="682652089687474209" id="message-682652089687474209">
+                <div class="chatlog__content">
+                    <div class="markdown">มาอยู่คุกตรงการาจครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/2ee040f6e4b4ecd64cc3ce7fa3b706f9.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Carameow#1570" data-user-id="649712434554077212" style="color: rgb(104, 97, 255)">(27MARY99) Caramel Macchiato</span>
+
+
+        <span class="chatlog__timestamp">28-Feb-20 01:42 AM</span>
+
+            <div class="chatlog__message " data-message-id="682658955876368428" id="message-682658955876368428">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="EthAnlele#7389">@Michael Shelby</span> ออกมาหรือยังคะ ?</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/13448fecc6f38e1b86c14ac981b0b75f.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="EthAnlele#7389" data-user-id="314861842381930496" style="color: rgb(255, 151, 196)">Michael Shelby</span>
+
+
+        <span class="chatlog__timestamp">28-Feb-20 02:07 AM</span>
+
+            <div class="chatlog__message " data-message-id="682665241338707988" id="message-682665241338707988">
+                <div class="chatlog__content">
+                    <div class="markdown">ออกเมืองแล้วฮะ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/6f4e94112f96ae3ab25ee3fa8d07b878.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Joke Johnsons#0979" data-user-id="602089517763264522">Joke Johnsons</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 08:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="683305551421374471" id="message-683305551421374471">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/unknown(2).png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/unknown(2).png" alt="Attachment">
+                    </a>
+                </div>
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1f44d.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/d3b5ce365ffe92e669724569f7fac706.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Achi#2862" data-user-id="325265199772729344" style="color: rgb(173, 20, 87)">Achi</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 08:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="683307962789658656" id="message-683307962789658656">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(104, 97, 255); background-color: rgba(104, 97, 255, 0.1);">@Police</span></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/Desktop_Screenshot_2020.02.29_-_17.49.52.26.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/Desktop_Screenshot_2020.02.29_-_17.49.52.26.png" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/c545866b6d5a00d1a1edf46e7fe5c6ef.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="CHIPMEE#6023" data-user-id="261518328781078530" style="color: rgb(255, 151, 196)">(PO lll) MEEMEE ORLOV</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 08:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="683309070379515969" id="message-683309070379515969">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Achi#2862">@Achi</span> มีคนช่วยรึยังคะ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/d3b5ce365ffe92e669724569f7fac706.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Achi#2862" data-user-id="325265199772729344" style="color: rgb(173, 20, 87)">Achi</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 08:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="683309316194828338" id="message-683309316194828338">
+                <div class="chatlog__content">
+                    <div class="markdown">มีแล้วครับ เรียบร้อย</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="683309339779399720" id="message-683309339779399720">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/Desktop_Screenshot_2020.02.29_-_20.47.12.79.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/Desktop_Screenshot_2020.02.29_-_20.47.12.79.png" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/3e50e40dbf3080f838314857ce7a9a2d.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="&#39;PU.#4942" data-user-id="599888457610952715" style="color: rgb(31, 139, 76)">'PU.</span>
+
+
+        <span class="chatlog__timestamp">05-Mar-20 04:31 AM</span>
+
+            <div class="chatlog__message " data-message-id="684875601836113959" id="message-684875601836113959">
+                <div class="chatlog__content">
+                    <div class="markdown">ติดในคุกครับเวลาหมดแล้วแต่ตัวไม่ออกคุกครับ .</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/c545866b6d5a00d1a1edf46e7fe5c6ef.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="CHIPMEE#6023" data-user-id="261518328781078530" style="color: rgb(255, 151, 196)">(PO lll) MEEMEE ORLOV</span>
+
+
+        <span class="chatlog__timestamp">05-Mar-20 12:43 PM</span>
+
+            <div class="chatlog__message " data-message-id="684999626079600670" id="message-684999626079600670">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="&#39;PU.#4942">@'PU.</span> มีคนช่วยรึยังคะ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/3e50e40dbf3080f838314857ce7a9a2d.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="&#39;PU.#4942" data-user-id="599888457610952715" style="color: rgb(31, 139, 76)">'PU.</span>
+
+
+        <span class="chatlog__timestamp">05-Mar-20 02:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="685032349687087104" id="message-685032349687087104">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="CHIPMEE#6023">@(PO lll) MEEMEE ORLOV</span> มีแล้วค้าบขอบคุณครับ.</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/dbb7a1c10542732c2609b2804dd5e54f.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Poon#7772" data-user-id="327316394993778690">Poon</span>
+
+
+        <span class="chatlog__timestamp">09-Mar-20 09:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="686588140823117905" id="message-686588140823117905">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(104, 97, 255); background-color: rgba(104, 97, 255, 0.1);">@Police</span>
+เวลาหมดแล้ว แต่ยังติดในคุกครับ  ช่วยด้วยครับ<span class="chatlog__edited-timestamp" title="09-Mar-20 09:58 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/f0ee57d3abda43cee58aaa97e68b21e9.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Armoo Jetdragon#9196" data-user-id="214329601290141696" style="color: rgb(104, 97, 255)">(PO) 'ZaneRaMel Macchiato</span>
+
+
+        <span class="chatlog__timestamp">10-Mar-20 11:42 AM</span>
+
+            <div class="chatlog__message " data-message-id="686796087540842526" id="message-686796087540842526">
+                <div class="chatlog__content">
+                    <div class="markdown">ช่วยแล้วครับ</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="./ติดอยู่ในคุก-ช่วยด้วยยยย [645475267602546698]_files/1f44d.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 56 message(s)</div>
+</div>
+
+
+</body></html>

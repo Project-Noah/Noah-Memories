@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<!-- saved from url=(0324)file:///E:/GitHubRepo/Noah/noah_discord_achieve/achieve/575720402358108160%20(Noah%20Project)/7.%20%F0%9F%9A%91%20%20Nurse/NOAH%20x%20Dyztiny%20Project%20-%20%F0%9F%9A%91%20%20Nurse%20-%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%AB%E0%B8%A1%E0%B8%AD%20[576013740072370186].html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>NOAH x Dyztiny Project - ประกาศจากหมอ</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="./ประกาศจากหมอ [576013740072370186]_files/solarized-dark.min.css">
+    <script src="./ประกาศจากหมอ [576013740072370186]_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./ประกาศจากหมอ [576013740072370186]_files/30f7ce291ac7b3886dae095b20a4fe46.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">NOAH x Dyztiny Project</div>
+        <div class="preamble__entry">🚑  Nurse / ประกาศจากหมอ</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/6383a2d13bc63b1e9ddd652aded9ed61.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="-✎ ᶻᵉʳᵒ ✿ ᴼᴴᴹ ✿ -#5050" data-user-id="319828339550584832" style="color: rgb(214, 12, 191)">-✎ ᶻᵉʳᵒ ✿ ᴼᴴᴹ ✿ -</span>
+
+
+        <span class="chatlog__timestamp">25-Dec-19 04:02 PM</span>
+
+            <div class="chatlog__message " data-message-id="659320056983060490" id="message-659320056983060490">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ประกาศจากหมอ [576013740072370186]_files/Building-04.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ประกาศจากหมอ [576013740072370186]_files/Building-04.png" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="659320075618353154" id="message-659320075618353154">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="./ประกาศจากหมอ [576013740072370186]_files/animated-line-image-0379.gif">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="./ประกาศจากหมอ [576013740072370186]_files/animated-line-image-0379.gif" alt="Attachment">
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">29-Dec-19 12:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="660714739260719155" id="message-660714739260719155">
+                <div class="chatlog__content">
+                    <div class="markdown"><img class="emoji " alt="🏥" title="🏥" src="./ประกาศจากหมอ [576013740072370186]_files/1f3e5.png"> การเรียกส่ง SMS แจ้งแพทย์ <img class="emoji " alt="🏥" title="🏥" src="./ประกาศจากหมอ [576013740072370186]_files/1f3e5.png"> 
+
+<div class="quote"><img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> อย่ากดเรียกแพทย์หากรีบไปธุระ สามารถออกไปต.ม.ได้เลยค่ะ เวลาไม่นับ เข้ามาใหม่ค่อยกดเรียกแพทย์ 
+</div>&gt; 
+<div class="quote"> <img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> การส่งเคสรัวๆ กดหลายๆที ทำให้แพทย์หาเคสยาก อาจทำให้เกิดเคสตกหล่น หรือเกิดการล่าช้าในการดำเนินการ
+</div>&gt; 
+<div class="quote"> <img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> ถ้ากดGเพื่อฟื้นที่ รพ.ล่าง ใช้กรณีที่ไม่มีโทรศัพท์ค่ะ in role คือ จำไม่ได้ให้ลืมไปเลยว่าเคยสลบหรือสลบได้ยังไง
+</div>&gt; 
+<div class="quote"> <img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> กรณีไปหลุดไปต.ม.คิวไม่ยาว ถ้าต้องการให้แพทย์รอ หรือคิวยาวมากให้แพทย์ไปทำอย่างอื่นก่อน แจ้งไว้ได้ค่ะ <span class="mention">#แจ้งสลบแพทย์ไม่เห็นตัว</span>
+</div>&gt; 
+<div class="quote"> <img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> หากแพทย์เข้าพื้นที่ช่วยเหลือคนสลบ ขอความร่วมมือ อย่าล้วง(search) ของคนสลบ  <em>หากหมอพบเจอ จะทำการเช็คฐานประวัติของคนนั้นๆในฐานข้อมูลแพทย์ และทำการแจ้งตำรวจ</em>
+</div>
+<img class="emoji " alt="🚑" title="🚑" src="./ประกาศจากหมอ [576013740072370186]_files/1f691.png"> การเข้าเคสของหมอ
+
+<div class="quote"><img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> รักษาที่รพ. จะมีการช่วยทำแผลร่วมด้วย เพื่อลดระยะเวลาการรักษา
+</div>&gt; 
+<div class="quote"><img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> รักษานอกสถานที่ จะรักษาแค่อาการบาดเจ็บนิดหน่อย (MEDKIT ONLY)
+</div>&gt; 
+<div class="quote"><img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> เจ้าหน้าที่แพทย์มีสิทธิ์ปฏิเสธไม่ไปเคสที่อันตรายต่อตนเอง เช่น เขากัญชา และ พื้นที่สุ่มเสี่ยงอื่นๆ <em>โปรดระมัดระวังตัวเอง</em></div><span class="chatlog__edited-timestamp" title="19-Jan-20 01:24 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">19-Jan-20 12:47 AM</span>
+
+            <div class="chatlog__message " data-message-id="668149398525575207" id="message-668149398525575207">
+                <div class="chatlog__content">
+                    <div class="markdown"><img class="emoji " alt="💊" title="💊" src="./ประกาศจากหมอ [576013740072370186]_files/1f48a.png"> <img class="emoji " alt="💊" title="💊" src="./ประกาศจากหมอ [576013740072370186]_files/1f48a.png">   ชี้แจ้งเรื่องอาการบาดเจ็บและการรักษาด้วยการซื้อยาที่เคาเตอร์ตอนไม่มีแพทย์/ไม่พบแพทย์  <img class="emoji " alt="💊" title="💊" src="./ประกาศจากหมอ [576013740072370186]_files/1f48a.png"> <img class="emoji " alt="💊" title="💊" src="./ประกาศจากหมอ [576013740072370186]_files/1f48a.png"> 
+
+<div class="quote">อาการหน้ามืด แยกเป็น2กรณี 
+1.เป็นไข้ร่วมด้วย เป็นอาการฮีสโตรก ให้ซื้อน้ำเกลือแร่ (ดื่มเรื่อยๆจนหาย สถิติสูงสุดคือช่างแดงเคยดื่มถึง9ขวด) 
+2. กระดูกหักร่วมด้วย ให้รักษาอาการกระดูก แล้วนอนพัก ให้ซื้อ Painkiller
+</div>&gt; 
+<div class="quote">ไม่สบาย/เป็นหวัด/ไข้
+Paracetamol / Antibiotic ให้ลองสังเกตุร่างกายว่าถูกกับยาตัวไหน หากกินกระปุกเดียวหาย ครั้งต่อไปให้ลองซื้อยาชนิดนั้นๆ บางครั้งอาจต้องกินซ้ำถึง2-3
+</div>&gt; 
+<div class="quote">เลือดออก Bleeding LV 1 - 4
+ใช้ Bandage รักษา ควรเว้นระยะเวลาในการใช้ต่อครั้ง
+</div>&gt; 
+<div class="quote">กระดูกหัก/ร้าว
+แยกออกเป็นส่วนต่างๆ ตั้งแต่ศีรษะ - เท้า รักษาด้วย Painkiller 
+ถ้ากระดูกส่วนแขน/มือหัก หากไม่จำเป็นต้องวิ่ง ยังไม่ต้องรักษาก็ได้ค่ะ</div><span class="chatlog__edited-timestamp" title="19-Jan-20 01:28 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">19-Jan-20 01:25 AM</span>
+
+            <div class="chatlog__message " data-message-id="668159059408584764" id="message-668159059408584764">
+                <div class="chatlog__content">
+                    <div class="markdown">.
+<img class="emoji " alt="🚔" title="🚔" src="./ประกาศจากหมอ [576013740072370186]_files/1f694.png"> การเรียกตำรวจเข้าเคสหมอ
+
+<div class="quote"><img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> กรณีใส่หน้ากาก แพทย์เจ้าของเคสจะทำการติดต่อเจ้าหน้าที่ตำรวจตามระเบียบแพทย์ อาจถูกค้นตัว/ดำเนินคดีหากมีสิ่งของผิดกฏหมาย
+</div>&gt; 
+<div class="quote"><img class="emoji " alt="🔹" title="🔹" src="./ประกาศจากหมอ [576013740072370186]_files/1f539.png"> หากถูกทำร้ายมาแล้วเจ้าหน้าที่แพทย์ตรวจสอบพบอาการเลือดไหล(bleeding&amp;การแจ้ง /do บาดเจ็บ ฟกช้ำจากการโดนทำร้าย หรืออื่นๆตามเจ้าหน้าที่แพทย์หน้างานสังเกตุเห็น) จะทำการประสานงานกับตำรวจเพื่อมาเก็บ dna
+<em>กรณีไม่พบอาการ&amp;ไม่ได้แจ้งเจ้าหน้าที่มาดำเนินการเก็บ dna ขอความร่วมมือให้คนไข้ไปแจ้งความเมื่อสุขภาพดีแล้ว</em></div><span class="chatlog__edited-timestamp" title="12-Feb-20 06:28 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668159156884209693" id="message-668159156884209693">
+                <div class="chatlog__content">
+                    <div class="markdown">.
+<img class="emoji " alt="🚑" title="🚑" src="./ประกาศจากหมอ [576013740072370186]_files/1f691.png"> การยกพวกตีกัน หมอจะรอให้เจ้าหน้าที่เข้าตรวจสอบและเก็บ dna อาจต้องนอนรอนาน เพราะต้องรอให้อัพโหลดเสร็จสิ้นก่อนทำการช่วยเหลือขึ้นมา
+
+<img class="emoji " alt="🚑" title="🚑" src="./ประกาศจากหมอ [576013740072370186]_files/1f691.png"> การยกพวกตีกัน หมอจะทำการกั้นพื้นที่/กำหนดพื้นที่ ไกลออกมาจากบริเวณนั้นๆ 
+ขอความร่วมมือไม่มาตีกันบริเวณรถพยาบาลที่หมอใช้กำหนดพื้นที่ 
+
+<div class="quote">สำหรับเคสจากการตีกัน 
+1. จะไม่ได้รับการรักษาเพิ่มเติมใดใด นอกจากยา
+2. เลือกที่จะรอเพือนอยู่บริเวณที่หมอกั้น / ให้หมอไปส่งร.พ. / ไปตีต่อ(ไม่ได้รับการรักษาเพิ่ม) ถ้าสลบ หมอเก็บเงินเหมือนเคสปกติ
+3. คนที่โดนตรวจ dna หมอจะพามาแยกไว้กับเคสทั่วไป เนื่องจากหากหมอทำการช่วยเหลือ จะทำให้ dna error (ไม่สามารถช่วยเหลือได้ทันที)</div><span class="chatlog__edited-timestamp" title="19-Jan-20 01:27 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">12-Mar-20 06:15 AM</span>
+
+            <div class="chatlog__message " data-message-id="687438483811205183" id="message-687438483811205183">
+                <div class="chatlog__content">
+                    <div class="markdown">ประกาศผู้ที่ผ่านข้อเขียน 7 ท่าน จะมีสอบสัมภาษณ์วันที่ 13  มีนาคม 2020 เวลา 20.00 น.
+ขอความร่วมมือ อ่านกฏแพทย์ก่อนล่วงหน้า อาจมีในคำถามรอบสัมภาษณ์
+<span class="mention" title="Cuzlazy-#4230">@Cuz Johnson</span> 
+<span class="mention" title="Khagna#8544">@THi (ไถ่)</span> 
+<span class="mention" title="มิตรภาพไม่จางหายถ้าสหายไม่ติดHEE#2420">@SchuBI Morgan  🇩🇪</span> 
+<span class="mention" title="KIDMANXV#6625">@Ada Wong</span> 
+<span class="mention" title="FirstistChannel#7346">@Junior Wolfvern (หมอเฟิร์ส)</span> 
+<span class="mention" title="BANKK#4444">@Palongpongpang (หมอป๋องแป๋ง)</span> 
+<span class="mention" title="merbiew🐲🐉#7150">@merbiew🐲🐉</span><span class="chatlog__edited-timestamp" title="12-Mar-20 06:21 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/4.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Gold_Handy#4944" data-user-id="274159607721492480" style="color: rgb(52, 152, 219)">Donny J. Flynn (หมอเจฟ)</span>
+
+
+        <span class="chatlog__timestamp">13-Mar-20 07:54 PM</span>
+
+            <div class="chatlog__message " data-message-id="688007173405540554" id="message-688007173405540554">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(31, 139, 76); background-color: rgba(31, 139, 76, 0.1);">@Civilian</span> ประกาศ สำหรับผู้ที่สอบหมอวันนี้นะครับ รบกวนทุกท่านอ่านกฏระเบียบของหมอก่อนทำการเข้าสอบ เนื่องจากจะมีการถามคำถามตอนสอบนะครับ 
+Link กฏของหมอ: <a href="https://docs.google.com/document/d/1kqgN6DK9skS9WHaGKIi8qYEY8WsrUPOMtpaAIKuYjuQ/edit?usp=sharing">https://docs.google.com/document/d/1kqgN6DK9skS9WHaGKIi8qYEY8WsrUPOMtpaAIKuYjuQ/edit?usp=sharing</a></div>
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1kqgN6DK9skS9WHaGKIi8qYEY8WsrUPOMtpaAIKuYjuQ/edit?usp=sharing"><div class="markdown">LSMD GB [Noah]</div></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><div class="markdown">LSMD Guide Book กฎและข้อปฎิบัติของแพทย์ Last updated: 09/12/19 กฏหลักห้ามฝ่าฝืนเด็ดขาด(ฝ่าฝืนปลิว) ห้ามแพทย์บอกหรือระบุพิกัด จำนวน เจ้าหน้าที่ตำรวจหรือเจ้าหน้าที่แพทย์ด้วยกัน กับบุคคลภายนอกโดยเด็ดขาด ห้ามอำนวยความสะดวก ช่วยเหลือแก๊งไหนเป็นพิเศษ ถ้าช่วยแก๊งไหนเป็นการส่วนตัวก็บิ...</div></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="./ประกาศจากหมอ [576013740072370186]_files/unnamed.png">
+                                <img class="chatlog__embed-thumbnail" src="./ประกาศจากหมอ [576013740072370186]_files/unnamed.png" alt="Thumbnail">
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/7e8f4e8b323bcce24ac40a91d57a95a7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="นุ่นนี่นั่นโน้นนนนนนน#6264" data-user-id="326386426453426176" style="color: rgb(214, 12, 191)">CARROT CAROTENE</span>
+
+
+        <span class="chatlog__timestamp">13-Mar-20 09:21 PM</span>
+
+            <div class="chatlog__message " data-message-id="688028974625980459" id="message-688028974625980459">
+                <div class="chatlog__content">
+                    <div class="markdown">ประกาศผู้ที่ผ่านสัมภาษณ์วันที่ 13 มีนาคม 2020 เวลา 20.00 น.
+<span class="mention" title="มิตรภาพไม่จางหายถ้าสหายไม่ติดHEE#2420">@SchuBI Morgan  🇩🇪</span> 
+<span class="mention" title="KIDMANXV#6625">@Ada Wong</span> 
+<span class="mention" title="FirstistChannel#7346">@Junior Wolfvern (หมอเฟิร์ส)</span> 
+<span class="mention" title="BANKK#4444">@Palongpongpang (หมอป๋องแป๋ง)</span>   
+รบกวน DM มาหน่อยนะคะ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/f943679ec7ece496858fe8f1e1b5e91f.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Fouting#4994" data-user-id="260731206193119232" style="color: rgb(52, 152, 219)">Luna D. Hazevillian</span>
+
+
+        <span class="chatlog__timestamp">19-Mar-20 10:05 PM</span>
+
+            <div class="chatlog__message " data-message-id="690214335414403093" id="message-690214335414403093">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(31, 139, 76); background-color: rgba(31, 139, 76, 0.1);">@Civilian</span> รบกวนกวนรอประมาณ5นาทีก่อน แล้วลองกดเกิดดู ใครเป็นอะไรมาซื้อที่รพ.ได้ หมอได้วางยาขายไปแล้ว</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./ประกาศจากหมอ [576013740072370186]_files/f943679ec7ece496858fe8f1e1b5e91f.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Fouting#4994" data-user-id="260731206193119232" style="color: rgb(52, 152, 219)">Luna D. Hazevillian</span>
+
+
+        <span class="chatlog__timestamp">19-Mar-20 10:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="690217080049369100" id="message-690217080049369100">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(31, 139, 76); background-color: rgba(31, 139, 76, 0.1);">@Civilian</span> ใครยังไม่ตื่นลองตม.อีกรอบ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 11 message(s)</div>
+</div>
+
+
+</body></html>

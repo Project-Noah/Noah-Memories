@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>NOAH x Dyztiny Project - general-server-rules</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="./general-server-rules [668075617140604939]_files/solarized-dark.min.css">
+    <script src="./general-server-rules [668075617140604939]_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./general-server-rules [668075617140604939]_files/30f7ce291ac7b3886dae095b20a4fe46.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">NOAH x Dyztiny Project</div>
+        <div class="preamble__entry">📝 Information / general-server-rules</div>
+
+        <div class="preamble__entry preamble__entry--small"></div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./general-server-rules [668075617140604939]_files/9999dff88f8a712acdf0a96492df60df.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Puss Peepers#5278" data-user-id="278740223012241418" style="color: rgb(255, 0, 0)">!Puss V Peepers</span>
+
+
+        <span class="chatlog__timestamp">18-Jan-20 07:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="668076452285120521" id="message-668076452285120521">
+                <div class="chatlog__content">
+                    <div class="markdown">Pinned a message.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668076955043627029" id="message-668076955043627029">
+                <div class="chatlog__content">
+                    <div class="markdown">แนวทางในการเล่นสำหรับ NOAH chapter2.5(หรือSS2.5)
+
+Story
+จะมีความเข้มข้นของเนื้อเรื่องตัวละครมากขึ้น และเน้นสร้างความบันเทิงให้ตัวผู้เล่นและผู้ชม
+
+Community
+จุดมุงหมายสูงสุดของchapterนี้คือ "สังคมเกม" ที่ "ผู้เล่น" เล่นเกมร่วมกันอย่างเป็นมิตร ถึงแม้จะRPเป็นศัตรูกันก็ตาม
+
+Quick and Casual
+Gameplayสำหรับss2.5นี้จะเน้นเพิ่มจำนวนรอบและวิธีการก่อเหตุต่างๆ โดยค่าปรับของssนี้จะมีความใกล้เคียงกันกับss2ในขณะที่ระยะเวลาจำคุกจะถูกลดลงเป็นอย่างมาก
+
+General Server Rules (GSR)
+กฎของเซิพเวอร์จะเป็นการผสมกันของss1และss2เพื่อเป็นแนวทางสำหรับผู้เล่นให้มีพฤติกรรมที่ดีในการRP
+
+More to Come
+จะมี ContentและMechanicใหม่ๆให้เกิด gameplayรูปแบบใหม่ๆขึ้นตามลำดับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668076974971027457" id="message-668076974971027457">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668076983942512670" id="message-668076983942512670">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668076985326764052" id="message-668076985326764052">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077065479651350" id="message-668077065479651350">
+                <div class="chatlog__content">
+                    <div class="markdown">Server Rules
+กฏของการใช้เซิร์ฟเวอร์ “ฉบับแปลไทยเป็นโนอาห์”
+
+* กฏที่ทางทีมงานได้ตั้งขึ้นถือเป็นที่สิ้นสุด จะไม่สามารถอ้างอิงในกฏอื่นๆของชีวิตจริงได้ 
+** การบังคับใช้กฏหมายของเซิฟเวอร์ให้อำนาจ Policeยศมาก&gt;น้อย ในขณะนั้นเป็นผู้ตัดสิน
+
+หากผู้เล่นมีโรคซึมเศร้า กรุณาแจ้งทีมงานในระหว่างการสอบเพื่อทำการรับฟังคำเตือนจากทีมงาน
+
+Discord 
+ดิสคอร์ดเซิร์ฟเวอร์ถูกจัดแจงให้มีห้องให้แจ้งปัญหา ติชมในด้านต่างๆโดยแยกหมวดหมู่เอาไว้ 
+ผู้เล่นจะต้องทำการแจ้งหรือโพสข้อความให้ถูกหมวดหมู่ ห้ามฟลัดหรือสแปมข้อความ
+
+Rude Chat &amp; Toxic Behavior
+
+ห้ามผู้เล่นมีพฤติกรรม Toxicในทุกๆ Platform เช่น Discord, Forum, In-game, etc.<span class="chatlog__edited-timestamp" title="29-Feb-20 10:07 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077102523744277" id="message-668077102523744277">
+                <div class="chatlog__content">
+                    <div class="markdown">ทีมงานสามารถพิจารณาพฤติกรรมของผู้เล่นที่มีการเผยแพร่สื่อหรือสารใดๆในcommunityต่างๆไม่จำกัดplatform ที่ก่อให้เกิดผลกระทบด้านลบต่อเซิพเวอร์หรือทีมงาน ในเรื่องของการปลุกปั่นยุยง กล่าวหาหรือให้ข้อมูลเท็จเกี่ยวกับเนื้อหาต่างๆ รวมไปถึงแนวทางและการบริหารงาน  ออกจากNoah RP Community หรือลงโทษ ตามดุลพินิจ
+.<span class="chatlog__edited-timestamp" title="29-Feb-20 10:07 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077238389833734" id="message-668077238389833734">
+                <div class="chatlog__content">
+                    <div class="markdown">Microphone 
+ต้องใช้ได้จริง ไม่มีเสียงรบกวน
+
+Voice Changers
+ห้ามใช้โปรแกรมเปลี่ยนเสียงเพื่อเปลี่ยนเสียงไปมา ถ้าใช้ต้องใช้ตลอดเพื่อRPเป็นเสียงตัวละครนั้นๆ หรือเครื่องเสียงวิทยุเท่านั้น
+
+Abusing Game Mechanics
+ห้ามใช้ Bug และหากพบต้องแจ้งทีมงานโดยด่วน
+ห้ามละเมิด Animation, Map, NPC หรือ object ต่างๆภายในเกม
+(อนุญาตเฉพาะกรณีจู่โจมด้วยปุ่ม R )
+
+Rules Exploit 
+การหาช่องโหว่จากกฎของเซิร์ฟเวอร์เพื่อจุดประสงค์ใดๆก็ตาม จะมีความผิด โดยทีมงานจะพิจารณาตามดุลพินิจ
+
+Cheating 
+การโกงหรือใช้ประโยชน์จาก client-side trainers, mod menus หรือ handling mods โดยเด็ดขาด 
+ในกรณีที่ผู้เล่นรับเงินหรือสิ่งของจากผู้เล่นท่านอื่นที่ได้มาโดยมิชอบ มีผลรับโทษและรับผิดชอบร่วมกัน<span class="chatlog__edited-timestamp" title="19-Jan-20 04:10 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077327506341888" id="message-668077327506341888">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077332002766849" id="message-668077332002766849">
+                <div class="chatlog__content">
+                    <div class="markdown">Administratorและทีมงาน คือผู้ดูแลระบบ
+ผู้เล่นจะต้องไม่แอบอ้างตัวเป็นผู้ดูแล เช่น การใช้ [ADMIN]นำหน้าชื่อหรือเปลี่ยนสีชื่อ
+ผู้เล่นจะต้องไม่แอบอ้างตัวเป็น FiveM Dev หรือ Moderator หรือผู้ดูแลของเซิร์ฟเวอร์ได้
+ห้ามแอบอ้าง เกี่ยวกับ Admin ในทุกกรณี</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077424809869312" id="message-668077424809869312">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077427247022093" id="message-668077427247022093">
+                <div class="chatlog__content">
+                    <div class="markdown">AFK 
+หาก AFK เป็นเวลานานเกินกว่า 10 นาที คุณจะถูกเชิญออก
+การ AFK ไม่สามารถนำเป็นข้ออ้างได้ทุกกรณี
+การ AFK ซ้ำบ่อยๆจะส่งผลให้คุณถูกแบน
+
+Breaking RP 
+คือการกระทำให้เสียบรรยากาศการเล่น Roleplay ของผู้คนโดยรอบ ส่งผลให้ผู้เล่นอื่นไม่สามารถสวมบทบาทต่อไปได้
+
+Out Of Character
+ระหว่างการเล่นเกมที่มีสถานการณ์เกิดขึ้น ผู้เล่นจะต้องไม่กระทำการนอกเหนือบทบาททั้งคำพูดและการกระทำ
+ห้ามพูดนอกบทบาทโดยไม่มีเหตุจำเป็น เช่น ติดต่อทีมงาน</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077453884784640" id="message-668077453884784640">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077456871260183" id="message-668077456871260183">
+                <div class="chatlog__content">
+                    <div class="markdown">Metagaming
+การนำข้อมูลภายนอกที่ตัวละครของผู้เล่นไม่ได้รับรู้ / ศึกษามาจากในเกม มาใช้(Twitch Chats, Twitch Stream, Discord, Etc.)
+
+Powergaming 
+การกระทำที่ขัดต่อหลักความเป็นจริงจนเกินไป เกินกว่าความสามารถของร่างกาย/วัตถุ 
+
+RDM - Random Death Match 
+คือ การฆ่าหรือทำร้ายผู้เล่นโดยไม่มีเรื่องราวหรือเหตุผลที่เหมาะสมรองรับรองรับ เช่น ต่อย ฟาด ยิง ฯลฯ (ทั้งการบาดเจ็บ การสลบ และเสียชีวิต)
+ผู้สังหารต้องแจ้งเหตุผลที่ฟังขึ้นให้เหยื่อของเขาทราบก่อนที่จะมีการลงมือสังหาร(เพื่อให้ตายจริงๆ)
+
+RVDM - Random Vehicle Deathmatch 
+คือ การฆ่าหรือทำร้ายผู้เล่นด้วยพาหนะ โดยไม่มีเรื่องราวรองรับ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077463959633938" id="message-668077463959633938">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077489515528237" id="message-668077489515528237">
+                <div class="chatlog__content">
+                    <div class="markdown">Roadkill
+คือ การที่ผู้เล่นอยู่ในสถานการณ์และพยายามใช้พาหนะในการฆ่าหรือทำร้ายผู้เล่นที่อยู่นอกพาหนะ</div>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="😍" title="😍" src="./general-server-rules [668075617140604939]_files/1f60d.png">
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="668077506401665024" id="message-668077506401665024">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077529298632715" id="message-668077529298632715">
+                <div class="chatlog__content">
+                    <div class="markdown">Combat logging 
+ห้ามกดเกิดในสถานการณ์ที่มีจนท.มาเกี่ยวข้องเพื่อหนีการจับกุมหรือตรวจสอบของจนท.
+ห้ามกดออกเกมหรือวาร์ปเปลี่ยนสถานที่ในสถานการณ์ต่างๆ เช่น เข้าจุดวาร์ปหนีผ่านประตู เบิกรถเพื่อสลับตำแหน่ง
+หากตัวเกมส์ของคุณเกิดมีปัญหา ให้ติดต่อทีมงานผ่านดิสคอร์ดทันทีและการหลุดออกจากเกมในสถานการณ์ต้องแจ้งทุกคนที่เกี่ยวข้องในห้อง <span class="mention">#แจ้งหลุดในเหตุการณ์</span>
+
+Combat Storing 
+ห้ามผู้เล่นเก็บไอเทมหรือยานพาหนะในสถานการณ์โดยไม่สมเหตุสมผล เพื่อป้องกันไม่ให้อีกฝ่ายได้ผลประโยชน์</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077533786537984" id="message-668077533786537984">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077557215789117" id="message-668077557215789117">
+                <div class="chatlog__content">
+                    <div class="markdown">Value of Life
+ผู้เล่นจะต้องให้คุณค่ากับชีวิตของตัวละครเป็นสำคัญ
+ห้ามท้าทายแรงโน้มถ่วงด้วยร่างกาย
+
+Terrorist RP
+การสวมบทบาทผู้ก่อการร้าย ผู้เล่นต้องปรึกษาทีมงานก่อนทุกกรณี
+คำจำกัดความ Terrorist ไม่ได้กำหนดตามหลักการก่อการร้ายแบบสากล
+
+Hitman RP
+ผู้เล่นสามารถจ้างวานผู้เล่นด้วยกันให้ทำการอุ้มฆ่าผู้เล่นคนอื่นๆได้ โดยต้องมีเหตุผลรองรับ และต้องมีหลักฐานการจ้างวานในข้อความส่วนตัว</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077563326758913" id="message-668077563326758913">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077589327511554" id="message-668077589327511554">
+                <div class="chatlog__content">
+                    <div class="markdown">Nudity
+อนุญาตให้ผู้เล่นแต่งตัวละครเปลือยได้ แต่ผู้เล่นจะถูกจับกุมฐานกระทำอนาจาร มีผลจำคุกและปรับตามกฏหมายภายในเกม
+
+Impersonation of Emergency Services
+ผู้เล่นสามารถแอบอ้างหน่วยงานฉุกเฉินได้ทุกรูปแบบ แต่จะถูกดำเนินคดีด้วยค่าปรับมหาศาล และการตัดสินจะเป็นไปตามดุลพินิจของ Police
+หน่วยงานฉุกเฉิน : ตำรวจ แพทย์
+
+
+Thief of Emergency Vehicles 
+ผู้เล่นสามารถขโมยรถของหน่วยงานตำรวจและแพทย์ได้ โดยจะเสียค่าปรับมหาศาลเมื่อถูกจับกุม<span class="chatlog__edited-timestamp" title="19-Jan-20 03:59 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077591952883722" id="message-668077591952883722">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077620486995979" id="message-668077620486995979">
+                <div class="chatlog__content">
+                    <div class="markdown">Thief of Millitary Vehicles
+ขโมยพาหนะทางการทหารถือเป็น Fail RP
+
+Suicide 
+ผู้เล่นสามารถสวมบทบาทในการฆ่าตัวตายได้ โดยต้องมีเหตุผลรองรับและไม่มีบิลค้างชำระ
+
+New Life Rule
+ในสถานะสลบหรือแตกหรือล้ม (ไม่ตาย)
+- ผู้เล่นสามารถใช้ภาพและเสียงที่เกิดขึ้นรอบๆเป็นข้อมูลได้
+- ผู้เล่นสามารถจำเหตุการณ์ที่เกิดรอบๆเป็นข้อมูลได้</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077623334928384" id="message-668077623334928384">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077666204909568" id="message-668077666204909568">
+                <div class="chatlog__content">
+                    <div class="markdown">ในสถานะเสียชีวิตหรือตาย
+- กดเกิดเองหลังจากสลบถือว่าเป็นการเสียชีวิต
+- ห้ามกดเกิดเองในสถานการณ์ที่ร่างกายของตัวละครสมควรอยู่ที่นั้นๆ
+- ผู้เล่นจะไม่สามารถจำเหตุการณ์ทุกอย่างที่เกี่ยวข้องกับการเสียชีวิตได้ไม่ว่านานแค่ไหนก็ตาม เว้นแต่มีคนเล่าให้ฟัง
+
+Unrealistic Phone Use
+ผู้เล่นไม่สามารถใช้โทรศัพท์หรือวิทยุเมื่อถูกคุมตัวโดยจนท.(เว้นแต่จนท.อนุญาต)หรือขณะถูกล็อคกุญแจมือ
+.<span class="chatlog__edited-timestamp" title="18-Jan-20 08:15 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077693258039298" id="message-668077693258039298">
+                <div class="chatlog__content">
+                    <div class="markdown">Kidnapping
+แพทย์สามารถถูกลักพาตัวได้ในกรณีที่มีแพทย์อีก 2 คนปฎิบัติหน้าที่อยู่
+ตำรวจสามารถถูกลักพาตัวได้ในกรณีที่มีตำรวจอีก 4 คนปฎิบัติหน้าที่อยู่
+
+ไม่สามารถใช้ NPC เป็นตัวประกันเพื่อต่อรอง
+ไม่สามารถใช้ตัวประกันเพื่อต่อรองเงินค่าไถ่
+สามารถใช้ตัวประกันที่ถูกลักพาตัวต่อรองรถยนต์เพื่อหลบหนี  
+ไม่สามารถใช้ตัวประกันที่ถูกลักพาตัวต่อรองเพื่ออาวุธ
+ไม่สามารถใช้ตัวประกันที่ถูกลักพาตัวต่อรองเพื่อให้เจ้าหน้าที่ยกเลิกปฏิบัติการได้
+ไม่สามารถใช้ตัวประกันที่ถูกลักพาตัวต่อรองเพื่อแลกเปลี่ยนตัวประกัน</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077702166609930" id="message-668077702166609930">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077842780913675" id="message-668077842780913675">
+                <div class="chatlog__content">
+                    <div class="markdown">Jail Break
+สามารถแหกคุกได้ โดยจนท.สามารถวิสามัญได้ทันที
+
+Robbering
+การปล้นสามารถทำได้กับตัวละครที่อยู่ในสถานะปกติและสลบ(loot)
+การสั่งให้เหยื่อgiveไอเทมให้ถือเป็นการละเมิดกลไก
+ผู้ก่อเหตุต้องประกาศให้ทราบอย่างชัดเจนว่าคือการปล้นด้วยคำพูดระยะใกล้และแสดงอาวุธ(หรือไม่แสดงก็ได้)เพื่อข่มขู่ และสามารถโจมตีเหยื่อได้ทันทีในกรณีที่
+- เหยื่อนิ่งใส่เป็นเวลา5วินาทีหลังจากมีการประกาศปล้น
+- เหยือมีพฤติกรรมหลบหนีโดยการเคลื่อนที่ออกจากจุดเกิดเหตุ
+- เหยื่อมีพฤติกรรมหยิบมือถือ/วิทยุเพื่อแจ้งเหตุหรือขอความช่วยเหลือ
+- เหยื่อมีพฤติกรรมแสดงอาวุธ</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077847407230996" id="message-668077847407230996">
+                <div class="chatlog__content">
+                    <div class="markdown">.</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668077874867208205" id="message-668077874867208205">
+                <div class="chatlog__content">
+                    <div class="markdown">Safezone
+คือพื้นที่ ที่มีการห้ามเริ่มก่อเหตุอาชญากรรมทุกรูปแบบ (ยกเว้นมีการหนีเข้าSafezone)
+ยกตัวอย่างเช่น การปล้น, การฆ่า, ทำร้ายร่างกาย, การค้ายา, ลักพาตัว  ในบริเวณดังนี้
+ -ข้างในโรงพยาบาล
+ -ข้างในสถานีตำรวจ
+ผู้ก่อเหตุจะต้องรับผิดชอบในกรณีผู้อื่นได้รับลูกหลง
+
+Redzone
+คือพื้นที่สุ่มเสี่ยงต่อการก่อเหตุ อนุญาตให้เกิดการต่อสู้โดยไม่สนใจRDM 
+-Civilianสามารถโจมตีกันได้เพื่อผลประโยชน์ในพื้นที่ดังกล่าว
+-PoliceสามารถตรวจสอบCivilianในพื้นที่ดังกล่าวได้
+(ระยะของพื้นที่ขึ้นอยู่กับดุลพินิจของทีมงาน)</div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="668078426850328576" id="message-668078426850328576">
+                <div class="chatlog__content">
+                    <div class="markdown">Pinned a message.</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./general-server-rules [668075617140604939]_files/9999dff88f8a712acdf0a96492df60df.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Puss Peepers#5278" data-user-id="278740223012241418" style="color: rgb(255, 0, 0)">!Puss V Peepers</span>
+
+
+        <span class="chatlog__timestamp">18-Jan-20 09:33 PM</span>
+
+            <div class="chatlog__message " data-message-id="668100719458517033" id="message-668100719458517033">
+                <div class="chatlog__content">
+                    <div class="markdown">ผมถือว่าทุกคนที่มียศCivilianและอื่นๆรับทราบแและยินยอมข้อตกลงนี้แล้วนะครับ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./general-server-rules [668075617140604939]_files/9999dff88f8a712acdf0a96492df60df.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Puss Peepers#5278" data-user-id="278740223012241418" style="color: rgb(255, 0, 0)">!Puss V Peepers</span>
+
+
+        <span class="chatlog__timestamp">19-Jan-20 10:27 AM</span>
+
+            <div class="chatlog__message " data-message-id="668295407377317888" id="message-668295407377317888">
+                <div class="chatlog__content">
+                    <div class="markdown">update 0.1
+
+กฎแก๊ง
+-1 แก๊ง รวมถึงผู้สนับสนุนด้วย สามารถมีสมาชิกได้ 15 คนเท่านั้น
+- ก่อเหตุพร้อมกันได้เต็มจำนวนทั้ง15คนเลย (จากเดิม6)
+
+การใช้คำเปรียบเปรย
+- เวลาจำคุกให้ใช้เป็น <em>นาที</em> ตามปกติ
+- สามารถกล่าวถึงDiscordเซิพว่า Discordประเทศฯ /Discord NOAH ได้
+
+gameplay update<span class="chatlog__edited-timestamp" title="05-Feb-20 10:59 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./general-server-rules [668075617140604939]_files/9999dff88f8a712acdf0a96492df60df.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Puss Peepers#5278" data-user-id="278740223012241418" style="color: rgb(255, 0, 0)">!Puss V Peepers</span>
+
+
+        <span class="chatlog__timestamp">19-Jan-20 04:10 PM</span>
+
+            <div class="chatlog__message " data-message-id="668381727311396864" id="message-668381727311396864">
+                <div class="chatlog__content">
+                    <div class="markdown"></div>
+                </div>
+
+                <div class="chatlog__attachment">
+                    
+                    <a href="https://cdn.discordapp.com/attachments/668075617140604939/668381727118327828/NOAH2.5Rules_1.2.txt">
+                        
+                            Attachment: NOAH2.5Rules_1.2.txt (16.2 KB)
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./general-server-rules [668075617140604939]_files/9999dff88f8a712acdf0a96492df60df.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Puss Peepers#5278" data-user-id="278740223012241418" style="color: rgb(255, 0, 0)">!Puss V Peepers</span>
+
+
+        <span class="chatlog__timestamp">29-Feb-20 10:01 PM</span>
+
+            <div class="chatlog__message " data-message-id="683327999533514776" id="message-683327999533514776">
+                <div class="chatlog__content">
+                    <div class="markdown">2/29/2020
+
+เพิ่มเติมเกี่ยวกับการดูแลพฤติกรรมในcommunityของผู้เล่น เพื่อเป็นการรักษาบรรยากาศและเสถียรภาพของNoah RP community
+ในส่วนของ GSR : Rude chat &amp; Toxic behavior
+
+ทีมงานสามารถพิจารณาพฤติกรรมของผู้เล่นที่มีการเผยแพร่สื่อหรือสารใดๆในcommunityต่างๆไม่จำกัดplatform ที่ก่อให้เกิดผลกระทบด้านลบต่อเซิพเวอร์หรือทีมงาน ในเรื่องของการปลุกปั่นยุยง กล่าวหาหรือให้ข้อมูลเท็จเกี่ยวกับเนื้อหาต่างๆ รวมไปถึงแนวทางและการบริหารงาน  ออกจากNoah RP Community หรือลงโทษ ตามดุลพินิจ</div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 36 message(s)</div>
+</div>
+
+
+</body></html>
